@@ -13,7 +13,15 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
 
-    public CustomerServiceImpl( CustomerRepository customerRepository) {
+    public CustomerServiceImpl() {
+    }
+
+    public CustomerServiceImpl(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
+    @Autowired
+    public void setCustomerRepository(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
